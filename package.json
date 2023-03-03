@@ -1,0 +1,19 @@
+{
+  "name": "teste",
+  "type":"module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test":"node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch":"node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll",
+    "test:coverage":"node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll --coverage"
+  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  }
+}
