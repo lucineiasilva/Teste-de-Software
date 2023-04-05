@@ -36,10 +36,27 @@ describe("deve retornar os testes Unitário de Pessoa", () =>{
 */
 it ("Deve retornar o cadastro simulado com mock", () => {
 const pessoa = new pessoas(objPessoa)
-PessoaController.cadastrarPessoa = jest.fn() .mockReturnValue({
+PessoaController.cadastrarPessoa = jest.fn().mockReturnValue({
+        nome: "Lucineia",
+        cpf: "87270447268",
+        nit: "4753",
+        dataNascimento: dataPessoa,
+        estrangeiro: false,
+        pais:"Brasil",
+        cep: "76984000",
+        logradouro: "Rua 30",
+        numero: "0838",
+        bairro: "Berquélia",
+        cidade: "Vilhena",
+        estado: "Rondônia",
+        telefone: "69-999996920",
+        telefoneContato: "69-999996920"
     
-
-
-    })
+    });
+    const retorno = PessoaController.cadastrarPessoa();
+    expect(retorno).toEqual (expect.objectContaining({
+    dataNascimento: expect.any(Date),...objPessoa,}));
+    expect(PessoaController.cadastrarPessoa).toBeCalledTimes(1)
+});
 })
-})
+
